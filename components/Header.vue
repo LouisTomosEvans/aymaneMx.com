@@ -4,15 +4,13 @@
       <div class="px-10 flex justify-between items-center">
         <div class="logo">
           <nuxt-link to="/">
-            <h1 class="text-2xl font-semibold text-gray-700 dark:text-gray-200"><span class="text-primary font-bold">Aymane</span>Mx.
+            <h1 class="text-2xl font-semibold text-black dark:text-gray-200"><span class="font-bold">LearnerMetrics</span> | Help & Support
             </h1>
           </nuxt-link>
         </div>
 
         <div class="flex flex-row">
-          <nuxt-link class="nav-link" to="/posts">Blog</nuxt-link>
-          <nuxt-link class="nav-link" to="/til/random">Random TIL</nuxt-link>
-          <nuxt-link class="nav-link" to="/about">About</nuxt-link>
+          <a class="nav-link no-underline" target="_blank" href="http://learnermetrics.com">Back to main site</a>
           <ColorSwitcher/>
         </div>
 
@@ -68,4 +66,5 @@ export default {
 .nav-link {
   @apply ml-5 font-medium text-center text-lg text-gray-700 dark:text-gray-200 dark:hover:text-primary hover:text-primary m-auto;
 }
+
 </style>

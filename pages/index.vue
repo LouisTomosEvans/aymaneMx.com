@@ -4,28 +4,19 @@
       <Hero/>
     </div>
 
-    <Blogs :posts="posts" title="Featured Blogs" :critical="true"/>
-    <Projects :projects="projects"/>
-    <Contact title="Get In touch"/>
+    <Blogs :posts="posts" title="Our Documentation" :critical="true"/>
+    <!-- <Projects :projects="projects"/> -->
+    <Contact class="pt-20" title="Can't find a solution? Get in touch!"/>
   </div>
 </template>
 
 <script>
 
-import {getFeaturedBlogs} from "assets/js/flatFileDb"
-
 export default {
-  async asyncData({$axios}) {
-    const projects = await $axios
-      .get(
-        'https://api.github.com/search/repositories?q=user:aymanemx&sort=stars&per_page=3'
-      )
-      .catch((errors) => {
-        // console.log(errors)
-      })
-
-    const posts = await getFeaturedBlogs()
-    return {posts, projects: projects.data.items}
+  async asyncData({$notion, params, error}) {
+    const pageTable = await $notion.getPageTable("0edbc78b2aef4f1dab4f3eb6069dbb79")
+    const posts = pageTable.filter((page) => page.public)
+    return {posts}
   },
 }
 </script>

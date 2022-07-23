@@ -12,7 +12,7 @@ import 'prismjs/components/prism-javascript'
 export default {
   async asyncData({ $notion, params, error }) {
     const pageTable = await $notion.getPageTable(
-      "ceef6f1a895a46b2a0e4a87b41405547"
+      "0edbc78b2aef4f1dab4f3eb6069dbb79"
     )
     const page = pageTable.find(
       (item) => item.public && item.slug === params.slug
@@ -32,7 +32,7 @@ export default {
     const post = this.page
     const title = post?.title
     const description = post?.description || "aymaneMx's blog about python, django, vuejs."
-    const image = post?.thumbnail[0].url || null
+    const image = post?.thumbnail || null
     const tags = post.tags || title
     const href = `https://aymanemx.com/posts/${post.slug}`
     const meta = this.$prepareMeta(

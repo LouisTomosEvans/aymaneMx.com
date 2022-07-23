@@ -1,13 +1,13 @@
 <template>
-  <Blogs :posts="posts" title="Blogs"/>
+  <Blogs :posts="posts" title="Our Documentation"/>
 </template>
 
 
 <script>
 export default {
   async asyncData({$notion, params, error}) {
-    const pageTable = await $notion.getPageTable("ceef6f1a895a46b2a0e4a87b41405547")
-    const posts = pageTable.filter((page) => page.public).sort((a, b) => new Date(b.created_at) - new Date(a.created_at))
+    const pageTable = await $notion.getPageTable("0edbc78b2aef4f1dab4f3eb6069dbb79")
+    const posts = pageTable.filter((page) => page.public)
     return {posts}
   },
   head: {

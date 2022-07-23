@@ -1,40 +1,20 @@
 <template>
   <div class="mt-20">
-    <div class="flex justify-center items-center text-base font-semibold text-gray-600 dark:text-gray-300">
+    <div class="flex justify-center items-center text-base font-semibold text-gray-600 dark:text-gray-300 mb-10">
       <h2 class="text-center">{{ title }}</h2>
-      <IconDoubleDown class="h-4 w-4"/>
     </div>
 
-    <div class="wrapper-small my-5">
-
-      <div v-for="post of posts" :key="post.slug" class="project-card md:flex mt-10">
-
-        <div class="img max-w-lg md:max-w-sm  mx-auto m-2">
-          <nuxt-link :to="`/posts/${post.slug}`">
-            <img :alt="post.title" :src="`${post.thumbnail[0].url}`" width="350" height="150" class="rounded-xl"/>
-          </nuxt-link>
-        </div>
-        <div class="flex flex-col justify-between max-w-lg mx-auto">
-          <div class="txt md:px-5 lg:px-0">
-            <nuxt-link :to="`/posts/${post.slug}`">
-              <h2 class="text-xl font-semibold text-gray-800 dark:text-gray-100">{{ post.title }}</h2>
-            </nuxt-link>
-            <p class="font-semibold text-gray-600 dark:text-gray-300 text-sm">{{ formatDate(post.created_at) }}</p>
-            <div class="flex flex-col justify-between max-w-lg mx-auto">
-            </div>
-            <span
-v-for="tag of post.tags" :key="tag"
-                  class="font-semibold text-gray-600 bg-opacity-25 dark:bg-opacity-40 dark:text-gray-300 text-sm rounded bg-gray-200 dark:bg-primary mr-1 px-1">
-              #{{ tag }}
-            </span>
-            <p class="text-base text-gray-700 dark:text-gray-200 my-1">{{ post.description }}</p>
-            <nuxt-link
-              :to="`/posts/${post.slug}`"
-              class="text-base font-semibold text-gray-700 dark:text-gray-200 my-3 hover:underline">
-              Read more >
-            </nuxt-link>
+    <div class="wrapper-small flex flex-wrap my-5">
+        <div v-for="post of posts" :key="post.slug" class="w-1/2 flex flex-wrap justify-center p-5">
+        <nuxt-link :to="`/posts/${post.slug}`">
+        <div class="h-80 flex bg-white dark:bg-gray-800 rounded-xl p-10 shadow-lg bg-background-form border">
+          <div class="flex justify-center items-center content-center self-center align-center flex-wrap">
+            <p class="w-full text-6xl text-center mb-6">{{ post.emoji }}</p>
+            <h2 class="text-2xl w-full mb-3 text-center  font-bold text-gray-800 dark:text-gray-100">{{ post.title }}</h2>
+            <p class="text-center text-lg text-gray-500 font-semibold dark:text-gray-400 my-1">{{ post.description }}</p>
           </div>
         </div>
+        </nuxt-link>
       </div>
     </div>
   </div>
@@ -46,7 +26,7 @@ export default {
   props: {
     title: {
       type: String,
-      default: "Blogs",
+      default: "Our Documentation",
     },
     posts: {
       type: Array,

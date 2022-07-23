@@ -4,7 +4,6 @@
       class="flex justify-center items-center text-base font-semibold text-gray-600 dark:text-gray-300"
     >
       <h2 class="text-center">{{ title }}</h2>
-      <IconDoubleDown class="h-4 w-4" />
     </div>
 
 
@@ -85,7 +84,7 @@ export default {
       const data = new FormData(event.target)
 
       this.$axios
-        .$post('https://formspree.io/f/mgedapdp', data)
+        .$post('https://formspree.io/f/mvolewkn', data)
         .then((response) => {
           this.message =
             'Thank you for getting in touch!'

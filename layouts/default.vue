@@ -8,7 +8,7 @@
       <Nuxt/>
     </div>
 
-    <div class="dark:bg-gray-900">
+    <div class="dark:bg-gray-900 pt-20">
       <Footer/>
     </div>
   </div>

@@ -4,18 +4,18 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'aymaneMx.com',
+    title: 'Help & Support | LearnerMetrics',
     htmlAttrs: {lang: 'en'},
     meta: [
       {charset: 'utf-8'},
       {name: 'viewport', content: 'width=device-width, initial-scale=1'},
-      {hid: 'description', name: 'description', content: 'aymaneMx -- django developer'},
+      {hid: 'description', name: 'description', content: 'Help & Support | LearnerMetrics'},
       /* Twitter */
       {hid: "twitter:card", name: "twitter:card", content: "summary"},
       {hid: "twitter:site", name: "twitter:site", content: "@aymane_max"},
       {hid: "twitter:creator", name: "twitter:creator", content: "@aymane_max"},
       {hid: "twitter:title", name: "twitter:title", content: "aymaneMx.com"},
-      {hid: "twitter:description", name: "twitter:description", content: 'aymaneMx -- django developer'},
+      {hid: "twitter:description", name: "twitter:description", content: 'Help & Support | LearnerMetrics'},
       {hid: "twitter:image", name: "twitter:image", content: '/favicon.png'},
       /* Open-Graph */
       {hid: "og:type", name: "og:type", content: "website"},
@@ -66,7 +66,7 @@ export default {
     hostname: process.env.SITEMAP_HOSTNAME,
     routes: async () => {
       const notion = require('vue-notion')
-      const pageTable = await notion.getPageTable("ceef6f1a895a46b2a0e4a87b41405547")
+      const pageTable = await notion.getPageTable("0edbc78b2aef4f1dab4f3eb6069dbb79")
       return pageTable.filter((item) => !!item.public).map((item) => `/posts/${item.slug}`)
     }
   },
