@@ -31,10 +31,10 @@ export default {
   head() {
     const post = this.page
     const title = post?.title
-    const description = post?.description || "aymaneMx's blog about python, django, vuejs."
+    const description = post?.description || "LearnerMetrics Support"
     const image = post?.thumbnail || null
     const tags = post.tags || title
-    const href = `https://aymanemx.com/posts/${post.slug}`
+    const href = `https://support.learnermetrics.com/posts/${post.slug}`
     const meta = this.$prepareMeta(
       {title, description, image, keywords: `${tags}`, url: href},
       [{name: "article:published-time", content: post?.created_at || null},]

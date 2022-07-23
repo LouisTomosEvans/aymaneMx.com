@@ -6,7 +6,7 @@
 
     <div class="wrapper-small flex flex-wrap my-5">
         <div v-for="post of posts" :key="post.slug" class="w-1/2 flex flex-wrap justify-center p-5">
-        <nuxt-link :to="`/posts/${post.slug}`">
+        <nuxt-link :to="`/posts/${post.slug}?`">
         <div class="h-80 flex bg-white dark:bg-gray-800 rounded-xl p-10 shadow-lg bg-background-form border">
           <div class="flex justify-center items-center content-center self-center align-center flex-wrap">
             <p class="w-full text-6xl text-center mb-6">{{ post.emoji }}</p>

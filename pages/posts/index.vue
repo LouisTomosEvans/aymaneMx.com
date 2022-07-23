@@ -11,12 +11,12 @@ export default {
     return {posts}
   },
   head: {
-    title: "AymaneMx's Blog",
+    title: "LearnerMetrics Support",
     meta: [
       {
         hid: 'description',
         name: 'description',
-        content: "aymaneMx's blog about python, django, vuejs."
+        content: "LearnerMetrics Support"
       }
     ]
   }
